@@ -1,0 +1,48 @@
+.Product {
+  position: relative;
+  display: block;
+  break-inside: avoid-column;
+  margin: 1rem 2rem;
+}
+
+  .Product .name {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    color: #525252;
+    font-weight: bold;
+  }
+
+  .Product .priceRange {
+    position: absolute;
+    left: 2rem; bottom: 5rem;
+  }
+
+    .Product .priceRange .price {
+      left: 1rem; bottom: 3rem;
+      padding: 1rem;
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: white;
+      background-color: rgba(70, 70, 70, 0.9);
+    }
+
+      .Product .priceRange .price:not(:last-child) {
+        text-decoration: line-through;
+        font-size: 1rem;
+        color: #ccc;
+        padding-bottom: 0;
+      }
+
+      .Product .priceRange .price .currencyValue:not(:last-child)::after {
+        content: ' - ';
+        display: inline-block;
+      }
+
+  .Product .hero {
+    width: 100%;
+    height: auto;
+  }

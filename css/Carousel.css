@@ -1,0 +1,95 @@
+.Carousel {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s opacity ease;
+}
+
+  .Carousel.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .Carousel .background {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .Carousel .box {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 90%;
+    height: 60%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+
+  .Carousel img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s transform ease, 0.5s opacity ease;
+  }
+
+    .Carousel img.prev { transform: translate(-150%, -50%); opacity: 0; }
+    .Carousel img.active { transform: translate(-50%, -50%); }
+    .Carousel img.next { transform: translate(50%, -50%); opacity: 0; }
+
+  .Carousel .closeButton {
+    position: absolute;
+    top: 0; right: 0;
+    font-size: 5rem;
+    color: #525252;
+  }
+    .Carousel .closeButton::before { content: "\2715"; }
+
+  .Carousel .prevButton,
+  .Carousel .nextButton {
+    position: absolute;
+    top: 50%;
+    height: 5rem;
+    width: 5rem;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #525252;
+    background-color: rgba(230, 230, 230, 0.9);
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+    .Carousel .prevButton::before,
+    .Carousel .nextButton::before {
+      display: block;
+      transform: scale(0.5, 1);
+    }
+
+    .Carousel .prevButton { left: 0; transform: translate(50%, -50%); }
+      .Carousel .prevButton::before { content: '<'; }
+    .Carousel .nextButton { right: 0; transform: translate(-50%, -50%); }
+      .Carousel .nextButton::before { content: '>'; }
+
+  .Carousel .bullets {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: rgba(100, 100, 100, 0.9);
+  }
+
+    .Carousel .bullets .bullet {
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      border: 1px solid white;
+      border-radius: 50%;
+      transition: 0.5s background-color ease;
+    }
+      .Carousel .bullets .bullet:not(:last-child) {
+        margin-right: 1rem;
+      }
+      .Carousel .bullets .bullet.active {
+        background-color: white;
+      }

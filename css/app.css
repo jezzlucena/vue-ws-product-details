@@ -1,0 +1,45 @@
+html {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 10px;
+}
+
+span.currencyValue::before {
+  content: '$';
+  display: inline;
+}
+
+.page {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 90rem;
+}
+
+  .pageDetails {
+    padding: 1rem;
+  }
+
+    .pageDetails .title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pageDetails .description {
+      font-size: 1.4rem;
+    }
+
+.products {
+  position: relative;
+  column-count: 3;
+}
+
+  @media all and (max-width: 736px) {
+    .products {
+      column-count: 2;
+    }
+  }
+
+  @media all and (max-width: 480px) {
+    .products {
+      column-count: 1;
+    }
+  }
